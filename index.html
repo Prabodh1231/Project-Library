@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="library.js" defer></script>
+  </head>
+  <body>
+    <button id="openDialog">Open Dialog</button>
+
+    <dialog id="sampleDialog">
+      <h2>Sign up for our newsletter</h2>
+      <form method="dialog">
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email" required />
+        <button type="submit" name="subscribe">Subscribe</button>
+        <button type="button" id="closeDialog">Close</button>
+      </form>
+    </dialog>
+    <dialog>
+      <button autofocus>Close</button>
+      <p>This is a dialog model</p>
+    </dialog>
+    <button id="newBook">New Book</button>
+  </body>
+</html>
