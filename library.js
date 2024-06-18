@@ -11,24 +11,12 @@ function addBookToLibrary() {
   // do stuff here
 }
 
-// let dialog = document.querySelector("dialog");
-// let showButton = document.querySelector("dialog + button");
-// let closeButton = document.querySelector("dialog button");
-
-// showButton.addEventListener("click", () => {
-//   dialog.showModal();
-// });
-
-// closeButton.addEventListener("click", () => {
-//   dialog.close();
-// });
-
 const dialog = document.getElementById("sampleDialog");
-const openButton = document.getElementById("openDialog");
+const addNew = document.getElementById("addNew");
 const closeButton = document.getElementById("closeDialog");
 
 // Event listener to open the dialog
-openButton.addEventListener("click", function () {
+addNew.addEventListener("click", function () {
   dialog.showModal();
 });
 

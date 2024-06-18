@@ -8,21 +8,43 @@
     <script src="library.js" defer></script>
   </head>
   <body>
-    <button id="openDialog">Open Dialog</button>
+    <header></header>
 
-    <dialog id="sampleDialog">
-      <h2>Sign up for our newsletter</h2>
-      <form method="dialog">
-        <label for="email">Email address:</label>
-        <input type="email" id="email" name="email" required />
-        <button type="submit" name="subscribe">Subscribe</button>
-        <button type="button" id="closeDialog">Close</button>
-      </form>
-    </dialog>
-    <dialog>
-      <button autofocus>Close</button>
-      <p>This is a dialog model</p>
-    </dialog>
-    <button id="newBook">New Book</button>
+    <main>
+      <h2>Books for Odin</h2>
+      <button id="addNew">Add Books</button>
+
+      <dialog id="sampleDialog">
+        <h2>Add New Books to the Library</h2>
+        <form method="dialog">
+          <label for="book_name">Book Name</label>
+          <input type="text" id="book_name" name="book_name" />
+
+          <label for="author_name">Author Name</label>
+          <input type="text" id="author_name" name="author_name" />
+
+          <label for="pages">Pages</label>
+          <input type="text" id="pages" name="pages" />
+
+          <fieldset>
+            <legend>Have you read the book ?</legend>
+
+            <div>
+              <input type="radio" name="book_status" id="yes" value="yes" />
+              <label for="yes">Yes</label>
+            </div>
+
+            <div>
+              <input type="radio" name="book_status" id="no" value="no" />
+              <label for="no">No</label>
+            </div>
+          </fieldset>
+          <button type="button" id="closeDialog">Close</button>
+          <button type="submit">Submit</button>
+        </form>
+      </dialog>
+    </main>
+
+    <footer></footer>
   </body>
 </html>
