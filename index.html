@@ -18,19 +18,25 @@
         <h2>Add New Books to the Library</h2>
         <form method="dialog">
           <label for="book_name">Book Name</label>
-          <input type="text" id="book_name" name="book_name" />
+          <input type="text" id="book_name" name="book_name" required />
 
           <label for="author_name">Author Name</label>
-          <input type="text" id="author_name" name="author_name" />
+          <input type="text" id="author_name" name="author_name" required />
 
           <label for="pages">Pages</label>
-          <input type="text" id="pages" name="pages" />
+          <input type="text" id="pages" name="pages" required />
 
           <fieldset>
             <legend>Have you read the book ?</legend>
 
             <div>
-              <input type="radio" name="book_status" id="yes" value="yes" />
+              <input
+                type="radio"
+                name="book_status"
+                id="yes"
+                value="yes"
+                required
+              />
               <label for="yes">Yes</label>
             </div>
 
