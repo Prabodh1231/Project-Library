@@ -1,4 +1,11 @@
 const myLibrary = [];
+const dialog = document.getElementById("sampleDialog");
+const addNew = document.getElementById("addNew");
+const closeButton = document.getElementById("closeDialog");
+const form = dialog.querySelector("form");
+
+let self_length = 0;
+let self_large = 1;
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -11,11 +18,6 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
   displayBooks(); // Update the UI with the new book
 }
-
-const dialog = document.getElementById("sampleDialog");
-const addNew = document.getElementById("addNew");
-const closeButton = document.getElementById("closeDialog");
-const form = dialog.querySelector("form");
 
 // Event listener to open the dialog
 addNew.addEventListener("click", function () {
@@ -45,17 +47,21 @@ form.addEventListener("submit", function (event) {
 
 // Function to display books in the UI
 function displayBooks() {
-  const bookList = document.createElement("ul");
-  myLibrary.forEach((book) => {
-    const bookItem = document.createElement("li");
-    bookItem.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
-    bookList.appendChild(bookItem);
-  });
+  const bookListContainer = document.querySelector(".self");
 
-  const main = document.querySelector("main");
-  const existingList = main.querySelector("ul");
-  if (existingList) {
-    main.removeChild(existingList);
+  for (let i = self_length; i < self_large; i++) {
+    console.log(i);
+    const book = myLibrary[i];
+    console.log(book);
+    const bookItem = document.createElement("div");
+    const deleteButton = document.createElement("button");
+    bookItem.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
+    bookListContainer.insertBefore(bookItem, addNew);
+    deleteButton.textContent = "Delete Me";
+    deleteButton.setAttribute("data-custom", "myCustomValue");
+    bookListContainer.insertBefore(deleteButton, addNew);
   }
-  main.appendChild(bookList);
+
+  self_large++;
+  self_length++;
 }

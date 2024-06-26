@@ -1,0 +1,21 @@
+* {
+  color: olive;
+  background-color: azure;
+  line-height: 1.6;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  display: grid;
+}
+
+.self {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+}
+
+button:hover {
+  color: chartreuse;
+  background-color: chocolate;
+}
