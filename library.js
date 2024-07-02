@@ -4,9 +4,6 @@ const addNew = document.getElementById("addNew");
 const closeButton = document.getElementById("closeDialog");
 const form = dialog.querySelector("form");
 
-let self_length = 0;
-let self_large = 1;
-
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -45,23 +42,32 @@ form.addEventListener("submit", function (event) {
   dialog.close(); // Close the dialog
 });
 
+const bookListContainer = document.querySelector(".self");
+
 // Function to display books in the UI
 function displayBooks() {
-  const bookListContainer = document.querySelector(".self");
+  bookListContainer.innerHTML = ""; // Clear the current list
+  myLibrary.forEach((book, index) => {
+    let bookbox = document.createElement("div");
+    bookbox.classList.add("bookcover");
 
-  for (let i = self_length; i < self_large; i++) {
-    console.log(i);
-    const book = myLibrary[i];
-    console.log(book);
     const bookItem = document.createElement("div");
     const deleteButton = document.createElement("button");
-    bookItem.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
-    bookListContainer.insertBefore(bookItem, addNew);
-    deleteButton.textContent = "Delete Me";
-    deleteButton.setAttribute("data-custom", "myCustomValue");
-    bookListContainer.insertBefore(deleteButton, addNew);
-  }
 
-  self_large++;
-  self_length++;
+    bookItem.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
+    deleteButton.textContent = "Delete Me";
+
+    bookbox.appendChild(bookItem);
+    bookbox.appendChild(deleteButton);
+    bookListContainer.appendChild(bookbox);
+
+    deleteButton.addEventListener("click", () => {
+      deleteBook(index);
+    });
+  });
+}
+
+function deleteBook(index) {
+  myLibrary.splice(index, 1);
+  displayBooks();
 }

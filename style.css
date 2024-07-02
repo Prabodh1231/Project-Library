@@ -10,12 +10,25 @@ body {
 }
 
 .self {
+  gap: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: repeat(2, 1fr);
 }
 
 button:hover {
   color: chartreuse;
   background-color: chocolate;
+}
+
+.bookcover {
+  aspect-ratio: 1 / 1;
+  background-color: darkcyan;
+  border: 5px solid green;
+  padding: 10px;
+}
+
+.bookcover > div {
+  color: black;
+  background-color: springgreen;
 }

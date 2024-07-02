@@ -17,45 +17,44 @@
     <main>
       <h2>Books for Odin</h2>
 
-      <div class="self">
-        <button id="addNew">Add Books</button>
+      <div class="self"></div>
+      <button id="addNew">Add Books</button>
 
-        <dialog id="sampleDialog">
-          <h2>Add New Books to the Library</h2>
-          <form method="dialog">
-            <label for="book_name">Book Name</label>
-            <input type="text" id="book_name" name="book_name" required />
+      <dialog id="sampleDialog">
+        <h2>Add New Books to the Library</h2>
+        <form method="dialog">
+          <label for="book_name">Book Name</label>
+          <input type="text" id="book_name" name="book_name" required />
 
-            <label for="author_name">Author Name</label>
-            <input type="text" id="author_name" name="author_name" required />
+          <label for="author_name">Author Name</label>
+          <input type="text" id="author_name" name="author_name" required />
 
-            <label for="pages">Pages</label>
-            <input type="text" id="pages" name="pages" required />
+          <label for="pages">Pages</label>
+          <input type="text" id="pages" name="pages" required />
 
-            <fieldset>
-              <legend>Have you read the book ?</legend>
+          <fieldset>
+            <legend>Have you read the book ?</legend>
 
-              <div>
-                <input
-                  type="radio"
-                  name="book_status"
-                  id="yes"
-                  value="yes"
-                  required
-                />
-                <label for="yes">Yes</label>
-              </div>
+            <div>
+              <input
+                type="radio"
+                name="book_status"
+                id="yes"
+                value="yes"
+                required
+              />
+              <label for="yes">Yes</label>
+            </div>
 
-              <div>
-                <input type="radio" name="book_status" id="no" value="no" />
-                <label for="no">No</label>
-              </div>
-            </fieldset>
-            <button type="button" id="closeDialog">Close</button>
-            <button type="submit">Submit</button>
-          </form>
-        </dialog>
-      </div>
+            <div>
+              <input type="radio" name="book_status" id="no" value="no" />
+              <label for="no">No</label>
+            </div>
+          </fieldset>
+          <button type="button" id="closeDialog">Close</button>
+          <button type="submit">Submit</button>
+        </form>
+      </dialog>
     </main>
 
     <footer></footer>
