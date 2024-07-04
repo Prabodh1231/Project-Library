@@ -54,7 +54,9 @@ function displayBooks() {
     const bookItem = document.createElement("div");
     const deleteButton = document.createElement("button");
 
-    bookItem.textContent = `${book.title} by ${book.author}, ${book.pages} pages, ${book.read}`;
+    let text_add = `<p><bold>Book: </bold>${book.title} <br><bold>Author: </bold>${book.author} <br> <bold>Pages: </bold>${book.pages} <br> <bold>Read Status: </bold>${book.read} <br> </p>`;
+
+    bookItem.innerHTML = text_add;
     deleteButton.textContent = "Delete Me";
 
     bookbox.appendChild(bookItem);
@@ -71,3 +73,41 @@ function deleteBook(index) {
   myLibrary.splice(index, 1);
   displayBooks();
 }
+
+let mountains = [
+  { name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
+  { name: "Monte Falterona", height: 1654, place: "Parco Foreste Casentinesi" },
+  { name: "Poggio Scali", height: 1520, place: "Parco Foreste Casentinesi" },
+  { name: "Pratomagno", height: 1592, place: "Parco Foreste Casentinesi" },
+  { name: "Monte Amiata", height: 1738, place: "Siena" },
+];
+
+let domtable = document.createElement("table");
+bookListContainer.appendChild(domtable);
+
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
+
+// let table = document.querySelector("domtable");
+let data = Object.keys(mountains[0]);
+generateTableHead(domtable, data);
+generateTable(domtable, mountains);
