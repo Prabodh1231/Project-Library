@@ -53,19 +53,31 @@ function displayBooks() {
 
     const bookItem = document.createElement("div");
     const deleteButton = document.createElement("button");
+    let change_read_status = document.createElement("button");
 
     let text_add = `<p><strong>Book: </strong><em>${book.title}</em><br> <strong>Author: </strong><em>${book.author}</em>
-    <br> <strong>Pages: </strong><em>${book.pages}</em> <br> <strong>Read Status: </strong><em>${book.read}</em> </p>`;
+    <br> <strong>Pages: </strong><em>${book.pages}</em> <br> <strong>Book tracker: </strong><em>${book.read}</em> </p>`;
 
     bookItem.innerHTML = text_add;
     deleteButton.textContent = "Delete Me";
 
+    if (book.read == "Unread") {
+      change_read_status.textContent = "Read";
+    } else {
+      change_read_status.textContent = "Unread";
+    }
+
     bookbox.appendChild(bookItem);
     bookbox.appendChild(deleteButton);
+    bookbox.appendChild(change_read_status);
     bookListContainer.appendChild(bookbox);
 
     deleteButton.addEventListener("click", () => {
       deleteBook(index);
+    });
+
+    change_read_status.addEventListener("click", () => {
+      changeStatus(index);
     });
   });
 }
@@ -73,4 +85,14 @@ function displayBooks() {
 function deleteBook(index) {
   myLibrary.splice(index, 1);
   displayBooks();
+}
+
+function changeStatus(index) {
+  if (myLibrary[index].read == "Unread") {
+    myLibrary[index].read = "Read";
+    displayBooks();
+  } else {
+    myLibrary[index].read = "Unread";
+    displayBooks();
+  }
 }

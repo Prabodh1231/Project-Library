@@ -9,7 +9,7 @@ body {
 .self {
   gap: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   grid-template-rows: repeat(2, 1fr);
 }
 
@@ -19,12 +19,13 @@ button:hover {
 }
 
 .bookcover {
-  background-color: darkcyan;
-  border: 5px solid green;
+  background-color: #901a1a;
+  border: 5px solid goldenrod;
   padding: 10px;
+  display: grid;
 }
 
 .bookcover > div {
-  color: black;
-  background-color: springgreen;
+  color: gold;
+  background-color: #901a1a;
 }

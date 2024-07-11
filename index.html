@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css" />
     <script src="library.js" defer></script>
   </head>
+
   <body>
     <header>
       <h1 style="font-family: 'Norse', sans-serif; color: darkgreen">
-        THE ODIN LIBRARY
+        zk THE ODIN LIBRARY
       </h1>
     </header>
-    <div id="table-container"></div>
+
     <main>
       <h2>Books for Odin</h2>
 
@@ -40,15 +41,15 @@
                 type="radio"
                 name="book_status"
                 id="yes"
-                value="yes"
+                value="Read"
                 required
               />
-              <label for="yes">Yes</label>
+              <label for="Read">Yes</label>
             </div>
 
             <div>
-              <input type="radio" name="book_status" id="no" value="no" />
-              <label for="no">No</label>
+              <input type="radio" name="book_status" id="no" value="Unread" />
+              <label for="Unread">No</label>
             </div>
           </fieldset>
           <button type="button" id="closeDialog">Close</button>
