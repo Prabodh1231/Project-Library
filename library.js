@@ -53,7 +53,9 @@ function displayBooks() {
 
     const bookItem = document.createElement("div");
     const deleteButton = document.createElement("button");
+    deleteButton.classList.add("button-64");
     let change_read_status = document.createElement("button");
+    change_read_status.classList.add("button-64");
 
     let text_add = `<p><strong>Book: </strong><em>${book.title}</em><br> <strong>Author: </strong><em>${book.author}</em>
     <br> <strong>Pages: </strong><em>${book.pages}</em> <br> <strong>Book tracker: </strong><em>${book.read}</em> </p>`;
