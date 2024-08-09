@@ -5,6 +5,13 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   display: grid;
   text-align: center;
+  grid-template-rows: 1fr 4fr 0.5fr;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  margin: 25px;
 }
 
 h1,
